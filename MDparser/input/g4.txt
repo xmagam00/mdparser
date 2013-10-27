@@ -1,0 +1,9 @@
+README:
+
+Run mdpfull.jar: java -jar mdpfull.jar [properties.file]
+Depending on the mode and the size of the input some memory might be required (specifiy with the -Xmx argument).
+
+args[0] has to be the path to the properties file, all other relevant arguments/properties are specified in it and are briefly explained.
+
+
+

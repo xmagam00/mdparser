@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties version="1.0">
+
+  <entry key="inputType">file</entry>
+  <!-- file - 'inputFile' is only one file (required for the train mode) -->
+  <!-- dir -  'inputFile' is a whole directory with files to be parsed -->
+  
+  <entry key="inputFile">input/sentece.txt</entry>
+  <!-- path to the input file if inputType is 'file'-->
+  <!-- path to the input dir if inputType is 'dir'-->
+
+  <entry key="language">english</entry>
+  <!-- language of the input file  -->
+  <!-- currently supported: english or german -->
+
+  <entry key="taggedFile">temp/1.txt</entry>
+  <!-- path to the tokenized and POS-tagged file -->
+  <!-- if inputType is 'file' the property should be a file -->
+  <!-- if inputType is 'dir' the property should be a dir -->
+  <!-- used only if mode is tag or outputFormat is 'stanford' -->
+
+  <entry key="mode">parse</entry>
+  <!-- tag   = only tokenize and tag with POS the input -->
+  <!-- parse = tokenize, tag with POS and parse the input --> 
+  <!-- train = train a new model -->
+
+  <entry key="outputFile">temp/1.conll</entry>
+  <!-- path to the output file if inputType=file and 
+       path to the output directory if inputType=dir -->
+
+  <entry key="inputFormat">text</entry>
+  <!-- conll = input file is in CONLL format (required for the train mode) -->
+  <!-- text = input file is plain text  -->
+
+  <entry key="outputFormat">conll</entry>
+  <!-- conll = output file is in CONLL format  -->
+  <!-- conllxml = output file is an xml file in CONLL format  -->
+  <!-- triple = output file is in triple format  -->
+  <!-- stanford = two output files(taggedFile(lemma/pos)and outputFile(dependencies)) are in STANFORD format -->
+  
+  <entry key="modelsFile">englishConll.zip</entry>
+  <!-- file to which the parser models are saved (must be a zip-file) -->
+
+  <entry key="modelFilePOSTaggerEnglish">resources/BROWN_MEDLINE/MEDLINE-BROWN-FINAL</entry>
+  <!-- path to the POS tagger model for English-->
+
+  <entry key="modelFilePOSTaggerGerman">resources/NEGRA/NEGRA</entry>
+  <!-- path to the POS tagger for German -->
+  
+  
+</properties>
