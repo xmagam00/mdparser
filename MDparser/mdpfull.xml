@@ -25,7 +25,7 @@
   <!-- parse = tokenize, tag with POS and parse the input --> 
   <!-- train = train a new model -->
 
-  <entry key="outputFile">temp/1.conll</entry>
+  <entry key="outputFile">temp/output.conll</entry>
   <!-- path to the output file if inputType=file and 
        path to the output directory if inputType=dir -->
 

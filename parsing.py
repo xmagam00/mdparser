@@ -134,7 +134,7 @@ tag = ""
 attached_sentence = ""
 
 try:
-	subor = codecs.open(options.output+"/"+"clueweb.parsed")
+	subor = codecs.open(options.output+"/"+"clueweb.parsed","w","utf-8")
 except:
 	sys.stderr.write("Chyba pri vytvarani suboru clueweb.parsed")
 	sys.exit(1)
@@ -158,24 +158,22 @@ for hh in range(0,len(fileList)):
 		line = f.readline()
 
 		line=unicode(line)
-            if not line:
-                break
+        if not line:
+            break
         
         if (line.find("<doc") != -1):
         	subor.write(line)
         
 
-        else if (attached_sentence in punctuation_list):
-        	try:
+        elif (attached_sentence in punctuation_list):
+            try:
 				pom_subor = codecs.open("input/sentence.txt","w","utf-8")
-			except:
+            except:
 				sys.stderr.write("Chyba pri otvarani suboru")
 				sys.exit(1)
-
-        	pom_subor.write(sentence)
-        	pom_subor.close()
-
-        	try:
+            pom_subor.write(sentence)
+            pom_subor.close()
+            try:
                 subprocess.call(['java -jar mdpfull.jar', 'mdpfull.xml' ])
             except:
                 sys.stderr.write("Error in MDParser\n")
@@ -183,7 +181,7 @@ for hh in range(0,len(fileList)):
                 sys.exit(1)
 
             try:
-            	output = codecs.open("temp/1.txt","r","utf-8")
+            	output = codecs.open("temp/output.conll","r","utf-8")
             except:
             	sys.stderr.write("Chyba pri otvarani vyparsovaneho suboru")
             	sys.exit(1)
